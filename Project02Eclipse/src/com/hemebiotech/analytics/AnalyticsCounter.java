@@ -7,13 +7,18 @@ import java.util.TreeMap;
 
 public class AnalyticsCounter {
 	
+	/**
+	 * Fonction principal qui utilise les fonction ReadSymptomDataFromFile() et getSymptoms().
+	 * Crer un fichier text result.out qui liste les symptomes et leurs occurences.
+	 */
+	
 	public static void main(String args[]) throws Exception {
-		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile("symptoms.txt");
-		List<String> lSymptoms = reader.getSymptoms();
+		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile("symptoms.txt"); 
+		List<String> lSymptoms = reader.getSymptoms(); 
 		Map<String, Integer> mapSymptoms = countSymptoms(lSymptoms);
 		
 		
-		// next generate output
+		
 		FileWriter writer = new FileWriter ("result.out");
 		for (String key : mapSymptoms.keySet()) {
 			writer.write(key + ":" + mapSymptoms.get(key) + "\n"); 
@@ -21,6 +26,10 @@ public class AnalyticsCounter {
 		writer.close();
 	
 	}
+	
+	/**
+	 * @return une liste (TreeMap) des symptoms triée par ordre alphabétique avec leur nombres d'occurences
+	 */
 	
 	public static Map<String, Integer> countSymptoms( List<String> lSymptoms ){
 		Map<String, Integer> newMap = new TreeMap<String, Integer>();

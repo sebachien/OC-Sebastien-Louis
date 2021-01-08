@@ -21,7 +21,10 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
 	}
-	
+	/**
+	 * Initialise une liste a partir d'un fichier text regroupant les symptomes.
+	 * @return a list of symptoms + affiche la liste dans le terminal.
+	 */
 	@Override
 	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
