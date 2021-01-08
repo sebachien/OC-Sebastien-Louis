@@ -39,4 +39,3 @@ public class AnalyticsCounter {
 		return newMap;
 	}
 }
-//qrrtgqrt
